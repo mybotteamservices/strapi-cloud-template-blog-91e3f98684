@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "banners",
+  "info": {
+    "singularName": "banner",
+    "pluralName": "banners",
+    "displayName": "banner",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "simple",
+        "image",
+        "cta",
+        "promo",
+        "alert",
+        "announcement"
+      ]
+    },
+    "header": {
+      "type": "string",
+      "required": true
+    },
+    "caption": {
+      "type": "blocks"
+    },
+    "pageLink": {
+      "type": "text"
+    },
+    "pageLinkLabel": {
+      "type": "string"
+    },
+    "backgroundUrl": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "backgroundColor": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "startDate": {
+      "type": "datetime"
+    },
+    "endDate": {
+      "type": "datetime"
+    }
+  }
+}
