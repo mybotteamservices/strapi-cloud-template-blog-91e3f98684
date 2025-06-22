@@ -1,5 +1,17 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedCallToAction extends Struct.ComponentSchema {
+  collectionName: 'components_shared_call_to_actions';
+  info: {
+    displayName: 'Call to Action';
+  };
+  attributes: {
+    openFeature: Schema.Attribute.Text;
+    text: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -65,6 +77,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.call-to-action': SharedCallToAction;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

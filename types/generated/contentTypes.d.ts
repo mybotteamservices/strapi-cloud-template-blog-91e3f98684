@@ -485,32 +485,46 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
     active: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
-    backgroundColor: Schema.Attribute.String;
-    backgroundUrl: Schema.Attribute.Media<
+    backgroundImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
-    caption: Schema.Attribute.Blocks;
+    callToAction: Schema.Attribute.Component<'shared.call-to-action', false>;
+    caption: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    category: Schema.Attribute.Enumeration<
+      [
+        'chat-feature-announcement',
+        'call-feature-announcement',
+        'character-feature-announcement',
+        'release-announcement',
+        'general-announcement',
+        'outage-announcement',
+      ]
+    > &
+      Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    endDate: Schema.Attribute.DateTime;
-    header: Schema.Attribute.String & Schema.Attribute.Required;
+    expirationTImestamp: Schema.Attribute.DateTime;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::banner.banner'
     > &
       Schema.Attribute.Private;
-    pageLink: Schema.Attribute.Text;
-    pageLinkLabel: Schema.Attribute.String;
+    location: Schema.Attribute.Enumeration<['landing', 'app']> &
+      Schema.Attribute.DefaultTo<'app'>;
     publishedAt: Schema.Attribute.DateTime;
-    startDate: Schema.Attribute.DateTime;
+    secondaryAction: Schema.Attribute.Component<'shared.call-to-action', false>;
+    targetPage: Schema.Attribute.Enumeration<
+      ['chat', 'characters', 'wallet', 'profile']
+    >;
+    theme: Schema.Attribute.Enumeration<
+      ['primary', 'success', 'danger', 'caution', 'default']
+    >;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    variant: Schema.Attribute.Enumeration<
-      ['simple', 'image', 'cta', 'promo', 'alert', 'announcement']
-    >;
   };
 }
 

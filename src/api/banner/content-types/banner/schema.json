@@ -11,31 +11,35 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "variant": {
-      "type": "enumeration",
-      "enum": [
-        "simple",
-        "image",
-        "cta",
-        "promo",
-        "alert",
-        "announcement"
-      ]
-    },
-    "header": {
+    "title": {
       "type": "string",
       "required": true
     },
     "caption": {
-      "type": "blocks"
+      "type": "blocks",
+      "required": true
     },
-    "pageLink": {
-      "type": "text"
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "chat-feature-announcement",
+        "call-feature-announcement",
+        "character-feature-announcement",
+        "release-announcement",
+        "general-announcement",
+        "outage-announcement"
+      ],
+      "required": true
     },
-    "pageLinkLabel": {
-      "type": "string"
+    "location": {
+      "type": "enumeration",
+      "enum": [
+        "landing",
+        "app"
+      ],
+      "default": "app"
     },
-    "backgroundUrl": {
+    "backgroundImage": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -46,19 +50,42 @@
         "audios"
       ]
     },
-    "backgroundColor": {
-      "type": "string"
+    "callToAction": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.call-to-action"
+    },
+    "secondaryAction": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.call-to-action"
+    },
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "success",
+        "danger",
+        "caution",
+        "default"
+      ]
+    },
+    "expirationTImestamp": {
+      "type": "datetime"
+    },
+    "targetPage": {
+      "type": "enumeration",
+      "enum": [
+        "chat",
+        "characters",
+        "wallet",
+        "profile"
+      ]
     },
     "active": {
       "type": "boolean",
       "default": false,
       "required": true
-    },
-    "startDate": {
-      "type": "datetime"
-    },
-    "endDate": {
-      "type": "datetime"
     }
   }
 }
