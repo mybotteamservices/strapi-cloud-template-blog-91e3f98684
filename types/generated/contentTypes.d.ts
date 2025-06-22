@@ -515,6 +515,7 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
       Schema.Attribute.DefaultTo<'app'>;
     publishedAt: Schema.Attribute.DateTime;
     secondaryAction: Schema.Attribute.Component<'shared.call-to-action', false>;
+    startDate: Schema.Attribute.DateTime & Schema.Attribute.Required;
     targetPage: Schema.Attribute.Enumeration<
       ['chat', 'characters', 'wallet', 'profile']
     >;
