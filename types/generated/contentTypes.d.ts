@@ -489,7 +489,7 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
       'images' | 'files' | 'videos' | 'audios'
     >;
     callToAction: Schema.Attribute.Component<'shared.call-to-action', false>;
-    caption: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    caption: Schema.Attribute.Text & Schema.Attribute.Required;
     category: Schema.Attribute.Enumeration<
       [
         'chat-feature-announcement',

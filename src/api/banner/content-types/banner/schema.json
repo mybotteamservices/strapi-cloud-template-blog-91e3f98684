@@ -15,10 +15,6 @@
       "type": "string",
       "required": true
     },
-    "caption": {
-      "type": "blocks",
-      "required": true
-    },
     "category": {
       "type": "enumeration",
       "enum": [
@@ -89,6 +85,10 @@
     },
     "startDate": {
       "type": "datetime",
+      "required": true
+    },
+    "caption": {
+      "type": "text",
       "required": true
     }
   }
