@@ -90,6 +90,21 @@
     "caption": {
       "type": "text",
       "required": true
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "standard",
+        "popup"
+      ]
+    },
+    "visibilityLevel": {
+      "type": "enumeration",
+      "enum": [
+        "member",
+        "visitor",
+        "user"
+      ]
     }
   }
 }

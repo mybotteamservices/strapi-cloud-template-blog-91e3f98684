@@ -526,6 +526,10 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    variant: Schema.Attribute.Enumeration<['standard', 'popup']>;
+    visibilityLevel: Schema.Attribute.Enumeration<
+      ['member', 'visitor', 'user']
+    >;
   };
 }
 
