@@ -1,5 +1,15 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedBulletPoint extends Struct.ComponentSchema {
+  collectionName: 'components_shared_bullet_points';
+  info: {
+    displayName: 'BulletPoint';
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedCallToAction extends Struct.ComponentSchema {
   collectionName: 'components_shared_call_to_actions';
   info: {
@@ -77,6 +87,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.bullet-point': SharedBulletPoint;
       'shared.call-to-action': SharedCallToAction;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;

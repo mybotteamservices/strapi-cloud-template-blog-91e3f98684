@@ -105,6 +105,11 @@
         "visitor",
         "user"
       ]
+    },
+    "bullets": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.bullet-point"
     }
   }
 }

@@ -488,6 +488,7 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
     backgroundImage: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios'
     >;
+    bullets: Schema.Attribute.Component<'shared.bullet-point', true>;
     callToAction: Schema.Attribute.Component<'shared.call-to-action', false>;
     caption: Schema.Attribute.Text & Schema.Attribute.Required;
     category: Schema.Attribute.Enumeration<
