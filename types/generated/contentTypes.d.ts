@@ -514,6 +514,7 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     location: Schema.Attribute.Enumeration<['landing', 'app']> &
       Schema.Attribute.DefaultTo<'app'>;
+    placement: Schema.Attribute.Enumeration<['global', 'character-section']>;
     publishedAt: Schema.Attribute.DateTime;
     secondaryAction: Schema.Attribute.Component<'shared.call-to-action', false>;
     startDate: Schema.Attribute.DateTime & Schema.Attribute.Required;

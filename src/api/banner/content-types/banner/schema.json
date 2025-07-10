@@ -110,6 +110,13 @@
       "type": "component",
       "repeatable": true,
       "component": "shared.bullet-point"
+    },
+    "placement": {
+      "type": "enumeration",
+      "enum": [
+        "global",
+        "character-section"
+      ]
     }
   }
 }
