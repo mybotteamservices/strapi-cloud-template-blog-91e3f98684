@@ -23,7 +23,8 @@
         "character-feature-announcement",
         "release-announcement",
         "general-announcement",
-        "outage-announcement"
+        "outage-announcement",
+        "visitor-level"
       ],
       "required": true
     },

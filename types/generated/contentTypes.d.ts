@@ -499,6 +499,7 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
         'release-announcement',
         'general-announcement',
         'outage-announcement',
+        'visitor-level',
       ]
     > &
       Schema.Attribute.Required;
