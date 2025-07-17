@@ -13,9 +13,15 @@ export interface SharedBulletPoint extends Struct.ComponentSchema {
 export interface SharedCallToAction extends Struct.ComponentSchema {
   collectionName: 'components_shared_call_to_actions';
   info: {
+    description: '';
     displayName: 'Call to Action';
   };
   attributes: {
+    clipboardValue: Schema.Attribute.String;
+    copyToClipboardWhenClicked: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<true>;
+    dismissWhenClicked: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     openFeature: Schema.Attribute.Text;
     text: Schema.Attribute.String & Schema.Attribute.Required;
     url: Schema.Attribute.Text;

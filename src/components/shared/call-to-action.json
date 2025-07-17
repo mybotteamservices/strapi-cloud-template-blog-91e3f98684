@@ -1,7 +1,8 @@
 {
   "collectionName": "components_shared_call_to_actions",
   "info": {
-    "displayName": "Call to Action"
+    "displayName": "Call to Action",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -14,6 +15,17 @@
     },
     "openFeature": {
       "type": "text"
+    },
+    "dismissWhenClicked": {
+      "type": "boolean",
+      "default": false
+    },
+    "copyToClipboardWhenClicked": {
+      "type": "boolean",
+      "default": true
+    },
+    "clipboardValue": {
+      "type": "string"
     }
   }
 }

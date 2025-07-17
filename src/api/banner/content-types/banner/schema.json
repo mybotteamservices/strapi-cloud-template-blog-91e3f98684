@@ -102,9 +102,11 @@
     "visibilityLevel": {
       "type": "enumeration",
       "enum": [
-        "member",
         "visitor",
-        "user"
+        "user",
+        "user-member",
+        "user-non-member",
+        "all"
       ]
     },
     "bullets": {

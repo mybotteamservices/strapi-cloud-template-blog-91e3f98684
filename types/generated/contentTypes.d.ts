@@ -531,7 +531,7 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     variant: Schema.Attribute.Enumeration<['standard', 'popup']>;
     visibilityLevel: Schema.Attribute.Enumeration<
-      ['member', 'visitor', 'user']
+      ['visitor', 'user', 'user-member', 'user-non-member', 'all']
     >;
   };
 }
